@@ -9,17 +9,21 @@
 	<body>
 		<h1>Дискретная математика</h1>
 		<h2>Лабораторная работа 1</h2>
-		<form>
+		<form onsubmit="functions();return false;">
 			<div>
-				<p>Множество 1:	<input type="text" id='arr1' size=40
-					pattern="([02468][13579]\d\d\s{0,1}){1,}"	
+				<p>Множество 1:	<input type="text" id='FirstArray' size=40
+					pattern="([02468][13579]\d\d\s{0,1}){1,}"
+					required	
 					placeholder="Введите данные в формате ijcc"></p>
-				<p>Множество 2:	<input type="text" id='arr2' size=40
-					pattern="([02468][13579]\d\d\s{0,1}){1,}"	
+			</div>
+			<div>
+				<p>Множество 2:	<input type="text" id='SecondArray' size=40
+					pattern="([02468][13579]\d\d\s{0,1}){1,}"
+					required	
 					placeholder="Введите данные в формате ijcc"></p>
 				<button class="btn btn class sucess"
 					type="submit">Выполнить действия</button>
-				</div>
-			</form>
+			</div>
+		</form>
 	</body>
 </html>
