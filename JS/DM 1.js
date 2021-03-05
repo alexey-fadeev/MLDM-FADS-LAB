@@ -37,6 +37,34 @@ function myIntersection() {
 	}
 	print(`<br/>Результат пересечения множеств: ${intMass}`)
 }
+function myAdd() {
+	var addMass = [];
+	for(var i = 0;i < firstMass.length;i++){
+		var cnt = 0;
+		for(var j = 0;j < secondMass.length;j++){
+			if(firstMass[i] == secondMass[j]) {
+				cnt++;
+				break;
+			}
+		}
+		if(!cnt) addMass.push(firstMass[i]);
+	}
+	print(`<br/>Результат дополнения/разности множеств: ${addMass}`)
+}
+function mySymDif() {
+	var symDifMass = [];
+	for(var i = 0;i < unMass.length;i++){
+		var cnt = 0;
+		for(var j = 0;j < intMass.length;j++){
+			if(unMass[i] == intMass[j]){
+				cnt++;
+				break;
+			}
+		}
+		if(!cnt) symDifMass.push(unMass[i]);
+	}
+	print(`<br/>Результат симметричной разности множеств: ${symDifMass}`)
+}
 function functions() {
 	FirstArray = document.getElementById('FirstArray').value;
 	SecondArray = document.getElementById('SecondArray').value;
@@ -44,9 +72,11 @@ function functions() {
 	SecondArray = SecondArray.split(' ');
 	Repeat(firstMass, FirstArray);
 	Repeat(secondMass, SecondArray);
-	print(`Первое множество: ${firstMass} <br/><br/>Второе множество: ${secondMass}`)
+	print(`<br/>Первое множество: ${firstMass}<br/> <br/>Второе множество: ${secondMass}`)
 	myUnion();
 	myIntersection();
+	myAdd();
 	firstMass =[];
 	secondMass =[];
+	mySymDif();
 }
