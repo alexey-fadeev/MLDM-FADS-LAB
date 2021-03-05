@@ -12,17 +12,16 @@
 		<form onsubmit="functions();return false;">
 			<div>
 				<p>Множество 1:	<input type="text" id='FirstArray' size=40
-					pattern="([02468][13579]\d\d\s{0,1}){1,}"
+					pattern="([02468][13579][1-9][1-9]\s{0,1}){1,}"
 					required	
 					placeholder="Введите данные в формате ijcc"></p>
 			</div>
 			<div>
 				<p>Множество 2:	<input type="text" id='SecondArray' size=40
-					pattern="([02468][13579]\d\d\s{0,1}){1,}"
+					pattern="([02468][13579][1-9][1-9]\s{0,1}){1,}"
 					required	
 					placeholder="Введите данные в формате ijcc"></p>
-				<button class="btn btn class sucess"
-					type="submit">Выполнить действия</button>
+				<input type="submit"value="Выполнить действия">
 			</div>
 		</form>
 	</body>
