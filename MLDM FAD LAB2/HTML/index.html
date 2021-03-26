@@ -10,10 +10,10 @@
 	<h1>Дискретная математика</h1>
 	<h2>Лабораторная работа 2</h2>
 	<h3>Матрица n*n</h3>
-	<form>
-		<div class="place">
-			<textarea rows="10" cols="45" class="matrx" placeholder="Введите матрицу"></textarea><br>
-			<div class= movi></div>
+	<form onsubmit="matrxInp(); return false;" >
+		<div id= "place">
+			<textarea rows="10" cols="45" id="matrx" placeholder="Введите матрицу"></textarea><br>
+			<div id= "movi"></div>
 			<div>
 				<input type="submit"value="Вывести свойства">
 			</div>
