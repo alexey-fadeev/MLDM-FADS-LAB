@@ -31,7 +31,7 @@ function simm() {
 	document.getElementById('simm').innerHTML = 'Матрица симметрична'+ '\n'
 	return true;
 }
-function antySimm(){
+function antySimm() {
 	for (let i = 0; i < place.length; i++) {
 		for (let j = 0; j < place[i].length; j++) {
 			if (+place[i][j] * +place[j][i] != 0) {
@@ -53,10 +53,36 @@ function reflex() {
 	document.getElementById('reflex').innerHTML = 'Матрица рефлексивна' + '\n';
 	return true;
 }
-
+function kosoSimm() {
+	for (let i = 0; i < place.length; i++) {
+		for (let j = 0; j < place[i].length; j++) {
+			if (place[i][j] != -place[j][i]) {
+				document.getElementById('kosoSimm').innerHTML = 'Матрица не кососимметрична' + '\n';
+				return false;
+			}
+		}
+	}
+	document.getElementById('kosoSimm').innerHTML = 'Матрица кососимметрична' + '\n';
+	return true;
+}
+function transit() {
+	let trans = [];
+	for(let i = 0; i < place.length; i++) {
+		trans[i] = [];
+		for(let j = 0; j < place[i].length; j++) {
+			for(let k = 0; k < place[j].length; k++) {
+				trans[i][j] = place[i][k] * place[k][j];
+			}
+			if(trans[i][j] > place[i][j]) return document.getElementById('transit').innerHTML = 'Матрица не транзитивна' + '\n';
+		}
+	}
+	return document.getElementById('transit').innerHTML = 'Матрица транзитивна' + '\n';
+}
 function mainF() {
 	matrxInp();
 	simm();
 	antySimm();
 	reflex();
+	kosoSimm();
+	transit();
 }
